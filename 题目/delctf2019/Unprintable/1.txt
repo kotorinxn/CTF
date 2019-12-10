@@ -1,0 +1,113 @@
+pwndbg> stack 0x50
+00:0000│ rsp  0x7ffd329966d0 ◂— 0x6562b026
+01:0008│      0x7ffd329966d8 ◂— 0x3000000030 /* '0' */
+02:0010│      0x7ffd329966e0 —▸ 0x7ffd32996888 —▸ 0x400659 (_start+41) ◂— hlt    
+03:0018│      0x7ffd329966e8 —▸ 0x7ffd329966f0 —▸ 0x7ffd329dc280 ◂— add    byte ptr ss:[rax], al /* '6' */
+04:0020│      0x7ffd329966f0 —▸ 0x7ffd329dc280 ◂— add    byte ptr ss:[rax], al /* '6' */
+05:0028│      0x7ffd329966f8 —▸ 0x601060 (buf) ◂— '%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n'
+06:0030│      0x7ffd32996700 ◂— 0x1000
+07:0038│      0x7ffd32996708 —▸ 0x7f6dab9d1260 (read+16) ◂— cmp    rax, -0xfff
+08:0040│      0x7ffd32996710 —▸ 0x7f6dabec7700 ◂— 0x7f6dabec7700
+09:0048│      0x7ffd32996718 ◂— 0x22 /* '"' */
+0a:0050│      0x7ffd32996720 —▸ 0x7f6dabc9f6a3 (_IO_2_1_stdout_+131) ◂— 0xca0780000000000a /* '\n' */
+0b:0058│      0x7ffd32996728 —▸ 0x7ffd329968a0 ◂— 0x1
+0c:0060│      0x7ffd32996730 ◂— 0x0
+0d:0068│      0x7ffd32996738 —▸ 0x7f6dab954409 (_IO_do_write+121) ◂— mov    r13, rax
+0e:0070│      0x7ffd32996740 ◂— 0x20 /* ' ' */
+0f:0078│      0x7ffd32996748 —▸ 0x7f6dabc9f620 (_IO_2_1_stdout_) ◂— 0xfbad2887
+10:0080│      0x7ffd32996750 ◂— 0xa /* '\n' */
+11:0088│      0x7ffd32996758 —▸ 0x400858 ◂— push   rdi /* "Welcome to Ch4r1l3's printf test" */
+12:0090│      0x7ffd32996760 —▸ 0x7ffd329968a0 ◂— 0x1
+13:0098│      0x7ffd32996768 —▸ 0x7f6dab95481b (_IO_file_overflow+235) ◂— cmp    eax, -1
+14:00a0│      0x7ffd32996770 ◂— 0x20 /* ' ' */
+15:00a8│      0x7ffd32996778 —▸ 0x7f6dabc9f620 (_IO_2_1_stdout_) ◂— 0xfbad2887
+16:00b0│      0x7ffd32996780 —▸ 0x400858 ◂— push   rdi /* "Welcome to Ch4r1l3's printf test" */
+17:00b8│      0x7ffd32996788 —▸ 0x7f6dab9497fa (puts+362) ◂— cmp    eax, -1
+18:00c0│      0x7ffd32996790 ◂— 0x0
+19:00c8│      0x7ffd32996798 —▸ 0x7ffd329967c0 —▸ 0x4007d0 (__libc_csu_init) ◂— push   r15
+1a:00d0│      0x7ffd329967a0 —▸ 0x400630 (_start) ◂— xor    ebp, ebp
+1b:00d8│      0x7ffd329967a8 —▸ 0x4007c6 (main+160) ◂— mov    edi, 0
+1c:00e0│      0x7ffd329967b0 —▸ 0x7ffd329968a0 ◂— 0x1
+1d:00e8│      0x7ffd329967b8 ◂— 0x3f3fdd95f748df00
+1e:00f0│ rbp  0x7ffd329967c0 —▸ 0x4007d0 (__libc_csu_init) ◂— push   r15
+1f:00f8│      0x7ffd329967c8 —▸ 0x7f6dab8fa830 (__libc_start_main+240) ◂— mov    edi, eax
+20:0100│      0x7ffd329967d0 ◂— 0x1
+21:0108│      0x7ffd329967d8 —▸ 0x7ffd329968a8 —▸ 0x7ffd32996f9c ◂— '/tmp/pwn/unprintable_patch_debug'
+22:0110│      0x7ffd329967e0 ◂— 0x1abec9ca0
+23:0118│      0x7ffd329967e8 —▸ 0x400726 (main) ◂— push   rbp
+24:0120│      0x7ffd329967f0 ◂— 0x0
+25:0128│      0x7ffd329967f8 ◂— 0x7269c9e674da8a33
+26:0130│      0x7ffd32996800 —▸ 0x400630 (_start) ◂— xor    ebp, ebp
+27:0138│      0x7ffd32996808 —▸ 0x7ffd329968a0 ◂— 0x1
+28:0140│      0x7ffd32996810 ◂— 0x0
+... ↓
+2a:0150│      0x7ffd32996820 ◂— 0x8d93ac54b4da8a33
+2b:0158│      0x7ffd32996828 ◂— 0x8cb29e7934aa8a33
+2c:0160│      0x7ffd32996830 ◂— 0x0
+... ↓
+2f:0178│      0x7ffd32996848 —▸ 0x7ffd329968b8 —▸ 0x7ffd32996fbd ◂— 'LD_PRELOAD=./libc-2.23.so'
+30:0180│      0x7ffd32996850 —▸ 0x7f6dabecb168 ◂— 0x0
+31:0188│      0x7ffd32996858 —▸ 0x7f6dabcb47db ◂— jmp    0x7f6dabcb47b0
+32:0190│      0x7ffd32996860 ◂— 0x0
+... ↓
+34:01a0│      0x7ffd32996870 —▸ 0x400630 (_start) ◂— xor    ebp, ebp
+35:01a8│      0x7ffd32996878 —▸ 0x7ffd329968a0 ◂— 0x1
+36:01b0│      0x7ffd32996880 ◂— 0x0
+37:01b8│      0x7ffd32996888 —▸ 0x400659 (_start+41) ◂— hlt    
+38:01c0│      0x7ffd32996890 —▸ 0x7ffd32996898 ◂— 0x1c
+39:01c8│      0x7ffd32996898 ◂— 0x1c
+3a:01d0│ r13  0x7ffd329968a0 ◂— 0x1
+3b:01d8│      0x7ffd329968a8 —▸ 0x7ffd32996f9c ◂— '/tmp/pwn/unprintable_patch_debug'
+3c:01e0│      0x7ffd329968b0 ◂— 0x0
+3d:01e8│      0x7ffd329968b8 —▸ 0x7ffd32996fbd ◂— 'LD_PRELOAD=./libc-2.23.so'
+3e:01f0│      0x7ffd329968c0 ◂— 0x0
+3f:01f8│      0x7ffd329968c8 ◂— 0x21 /* '!' */
+40:0200│      0x7ffd329968d0 —▸ 0x7ffd329dc000 ◂— jg     0x7ffd329dc047
+41:0208│      0x7ffd329968d8 ◂— 0x10
+42:0210│      0x7ffd329968e0 ◂— 0x1f8bfbff
+43:0218│      0x7ffd329968e8 ◂— 0x6
+44:0220│      0x7ffd329968f0 ◂— 0x1000
+45:0228│      0x7ffd329968f8 ◂— 0x11
+46:0230│      0x7ffd32996900 ◂— 0x64 /* 'd' */
+47:0238│      0x7ffd32996908 ◂— 0x3
+48:0240│      0x7ffd32996910 —▸ 0x400040 ◂— 0x500000006
+49:0248│      0x7ffd32996918 ◂— 0x4
+4a:0250│      0x7ffd32996920 ◂— 0x38 /* '8' */
+4b:0258│      0x7ffd32996928 ◂— 0x5
+4c:0260│      0x7ffd32996930 ◂— 9 /* '\t' */
+4d:0268│      0x7ffd32996938 ◂— 0x7
+4e:0270│      0x7ffd32996940 —▸ 0x7f6dabca4000 ◂— jg     0x7f6dabca4047
+4f:0278│      0x7ffd32996948 ◂— 0x8
+
+0x601060
+0x1000
+0x7f6dab9d1260
+0x7f6dabec7700
+0x22
+0x7ffd329968a0
+0x3f3fdd95f748df00
+0x4007d0
+0x7f6dab8fa830
+0x1
+0x7ffd329968a8
+0x1abec9ca0
+0x400726
+(nil)
+0x7269c9e674da8a33
+0x400630
+0x7ffd329968a0
+(nil)
+(nil)
+0x8d93ac54b4da8a33
+0x8cb29e7934aa8a33
+(nil)
+(nil)
+(nil)
+0x7ffd329968b8
+0x7f6dabecb168
+0x7f6dabcb47db
+(nil)
+(nil)
+0x400630
+0x7ffd329968a0
+(nil)
