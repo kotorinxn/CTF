@@ -1,6 +1,6 @@
 from pwn import *
 context(os = 'linux',arch = 'i386', log_level = 'debug')
-debug = 0
+debug = 1
 if debug == 1:
 	p = process('./start')
 else:
